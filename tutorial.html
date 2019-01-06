@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chord Identifier - Tutorial</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    body {background-color: lightsalmon;}
+    IMG.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+     h1   {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     h2   {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     p    {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     p.references {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold, center}
+     .navbar-brand {color: white;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     .active {color: white;	font-family: "Arial", Arial, sans-serif; font-weight:bold}
+     p.oblique {color:black; font-style: oblique; font-family: "Arial", Arial, sans-serif; font-weight:bold}
+     .panel-group {color:black; font-style: oblique; font-family: "Arial", Arial, sans-serif; font-weight:bolder}
+     /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >Chord Identifier</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="cs498.html">Home</a></li>
+	        <li><a href="ChordIdentifier.html">Tool</a></li>
+            <li><a href="log.html">Build Log</a></li>
+            <li>  <a href="research.html">Research</a></li>
+            <li class=active><a href="log.html">Tutorial</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="PANELGROUP">
+  <h2 align=center>Tutorial and references</h2>
+  <div class="panel-group">
+
+    <div class="panel panel-default">
+      <div class="panel-heading">4-22-18</div>
+      <div class="panel-body">Hello, this tool is for beginning guitarists to recognize root 1 and 6 chords, choosing triads (groups
+        of three notes to match a major or minor chord. Below are some diagrams to help out, just pick one of these shapes, move it up
+        and down the neck, and see which chord you get! Note how the further you go up to the 12th fret, the root note keeps ascending (e.g. from A to A# to B).
+      Also, if you do not wish to play a note on a certain string than click the X radio button for that string, this will mute it!</div>
+         <img class="displayed" src="major.gif" alt="Major Barre" align="middle"></p>
+         <img class="displayed" src="minorchord.gif" alt="Minor Barre" align="middle"></p>
+         <img class="displayed" src="majortriad.gif" alt="Major Triad" align="middle"></p>
+         <img class="displayed" src="minortriad.gif" alt="Minor Triad" align="middle"></p>
+         <p align="middle">References: </p>
+        <p align="middle">w3schools.com </p>
+          <p align="middle">php.net </p>
+          <p align="middle">tutorialspoint.com </p>
+          <p align="middle">Images made by Matt Gilot (myself) </p>
+
+
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>By Matthew Gilot</p>
+</footer>
+
+</body>
+</html>

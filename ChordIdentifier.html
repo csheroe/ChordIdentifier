@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chord Identifier - Tool</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    img
+    {
+    width: 74%;
+    height: 50%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.9;
+    left: 163px;
+    align-items: center;
+    margin: 0 auto;
+    top: 84px;
+    }
+    .fretboard
+    {
+      width: 87%;
+      height: 25%;
+      left: 71px;
+      position: absolute;
+      align-items: center;
+      z-index: 1;
+      opacity: 0.95;
+      justify-content: space-around;
+      color: white;
+      margin: 0 auto;
+      top:39px;
+      border-color: transparent;
+    }
+    body {background-color: lightsalmon;}
+    h1   {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+    h2   {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+    p    {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+    .navbar-brand {color: white;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+    .active {color: white;	font-family: "Arial", Arial, sans-serif; font-weight:bold}
+    p.oblique {color:black; font-style: oblique; font-family: "Arial", Arial, sans-serif; font-weight:bold}
+    footer{
+      position:relative;
+      top:500px;
+      left:3px;
+    }
+    button
+    {
+      position: absolute;
+      top: 400px;
+      left: 570px;
+      z-index: 1.0;
+    }
+  /*  .container-fluid text-center {min-height: 120px;}
+    body.img {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    }
+  */
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    /*@media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+    }*/
+  </style>
+</head>
+
+<body>
+
+
+<!---navbar--->
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >Chord Identifier</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="cs498.html">Home</a></li>
+	        <li class="active"><a href="ChordIdentifier.html">Tool</a></li>
+          <li><a href="log.html">Build Log</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="tutorial.html">Tutorial</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!--<img src="fretboard.jpg" alt="fretboard" height="350" width="1210">-->
+
+<div class="fretboard responsive">
+<table style="width:1200;height:300" class="table fretboard searchform">
+	<tr>
+		<td class="muted" align="Left">X</td>
+        <td align="left" class="frets">
+        <b>0</b>
+        </td>
+        <td align="left" class="frets">
+        <b>1</b>
+        </td>
+        <td align="left" class="frets">
+        <b>2</b>
+        </td>
+        <td align="left" class="frets">
+        <b>3</b>
+        </td>
+        <td align="left" class="frets">
+        <b>4</b>
+        </td>
+        <td align="left" class="frets">
+        <b>5</b>
+        </td>
+        <td align="left" class="frets">
+        <b>6</b>
+        </td>
+        <td align="left" class="frets">
+        <b>7</b>
+        </td>
+        <td align="left" class="frets">
+        <b>8</b>
+        </td>
+        <td align="left" class="frets">
+        <b>9</b>
+        </td>
+        <td align="left" class="frets">
+        <b>10</b>
+        </td>
+        <td align="left" class="frets">
+        <b>11</b>
+        </td>
+        <td align="left" class="frets">
+        <b>12</b>
+	<tr>
+		<td class="muted" align="left">
+            <input type="radio" name="string5" class="noteinput" id="string5-fretmute" value="mute" checked /></td>
+    <td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret0" value="E" ></td>
+    <td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret1" value="F" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret2" value="F#" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret3" value="G" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret4" value="G#" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret5" value="A" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret6" value="A#" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret7" value="B" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret8" value="C" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret9" value="C#" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret10" value="D" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret11" value="D#" ></td>
+		<td>
+            <input type="radio" name="string5" class="noteinput" id="string5-fret12" value="E" ></td>
+		</tr>
+	<tr>
+		<td class="muted" align="left">
+      <input type="radio" name="string4" class="noteinput" id="string4-fretmute" value="mute" checked /></td>
+    <td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret0" value="B" ></td>
+    <td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret1" value="C" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput"id="string4-fret2" value="C#" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput"id="string4-fret3" value="D" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret4" value="D#" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret5" value="E" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret6" value="F" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret7" value="F#" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret8" value="G" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret9" value="G#" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret10" value="A" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret11" value="A#" ></td>
+		<td>
+            <input type="radio" name="string4" class="noteinput" id="string4-fret12" value="B" ></td>
+		</tr>
+
+	<tr>
+		<td class="muted" align="left">
+              <input type="radio" name="string3" class="noteinput" id="string3-fretmute" value="mute" checked /></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret0" value="G" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret1" value="G#" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret2" value="A" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret3" value="A#" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret4" value="B" ></td>
+      	<td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret5" value="C" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret6" value="C#" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret7" value="D" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret8" value="D#" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret9" value="E" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret10" value="F" ></td>
+        <td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret11" value="F#" ></td>
+      	<td>
+              <input type="radio" name="string3" class="noteinput" id="string3-fret12" value="G" ></td>
+		</tr>
+	<tr>
+		<td class="muted" align="left">
+      <input type="radio" name="string2" class="noteinput" id="string2-fretmute" value="mute" checked /></td>
+        <td>
+            <input type="radio" name="string2" class="noteinput" id="string2-fret0" value="D" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret1" value="D#" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret2" value="E" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret3" value="F" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret4" value="F#" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret5" value="G" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret6" value="G#" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret7" value="A" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput"id="string2-fret8" value="A#" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret9" value="B" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret10" value="C" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret11" value="C#" ></td>
+        <td>
+                    <input type="radio" name="string2" class="noteinput" id="string2-fret12" value="D" ></td>
+		</tr>
+	<tr>
+		<td class="muted" align="left">
+          <input type="radio" name="string1" class="noteinput" id="string1-fretmute" value="mute" checked /></td><td class="noteinput notezero">
+            <input type="radio" name="string1" class="noteinput" id="string1-fret0" value="A" ></td>
+          <td>
+            <input type="radio" name="string1" class="noteinput" id="string1-fret1" value="A#" ></td>
+          <td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret2" value="B" ></td>
+          <td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret3" value="C" ></td>
+      	  <td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret4" value="C#" ></td>
+        	<td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret5" value="D" ></td>
+        	<td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret6" value="D#" ></td>
+          <td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret7" value="E" ></td>
+        	<td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret8" value="F" ></td>
+        	<td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret9" value="F#" ></td>
+          <td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret10" value="G" ></td>
+        	<td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret11" value="G#" ></td>
+        	<td>
+              <input type="radio" name="string1" class="noteinput" id="string1-fret12" value="A" ></td>
+		</tr>
+	<tr>
+		<td align="left"><input type="radio" name="string0" class="noteinput" id="string0-fretmute" value="mute" checked /></td>
+  <td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret0" value="E" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret1" value="F" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret2" value="F#" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret3" value="G" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret4" value="G#" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret5" value="A" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret6" value="A#" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret7" value="B" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret8" value="C" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret9" value="C#" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret10" value="D" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret11" value="D#" ></td>
+		<td>
+            <input type="radio" name="string0" class="noteinput" id="string0-fret12" value="E" ></td>
+		</tr>
+	</table>
+  <button onclick="getCheckedRadio()">Submit</button>
+</div>
+
+<img src="fretboard.jpg" alt="fretboard" height="350" width="1250">
+
+<h1 style="margin-top:300px; margin-left:100px; text-align: center; padding-top: 200px; ";  id="omega"></h1>
+
+<!--
+function getCheckedRadio(noteinput) {
+    for (var i = 0; i < noteinput.length; i++) {
+        var button = noteinput[i];
+        if (button.checked) {
+            return button;
+        }
+    }
+    return undefined;
+}
+var checkedButton = getCheckedRadio(document.forms.frmId.elements.groupName);
+if (checkedButton) {
+    alert("The value is " + checkedButton.value);
+}
+
+!-->
+
+
+<script>
+function getCheckedRadio() {
+
+  var alpha = new Array()
+  var gamma = ''
+  var count = 0
+  var radioButtons = document.getElementsByClassName("noteinput");
+  for (var i = 0; i < radioButtons.length; i++) {
+      if (radioButtons[i].checked) {
+          alpha[count] = radioButtons[i].value;
+          count++;
+      }
+  }
+
+  gamma = alpha;
+  document.getElementById('omega').innerHTML = alpha;
+  gamma = JSON.stringify(alpha)
+  var xmlhttp;
+  if (gamma === "") {
+    console.log("empty");
+  }
+  xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("omega").innerHTML =
+      this.responseText;
+    }
+  };
+//console.log(alpha[0]);
+  xmlhttp.open("POST", "chords.php", true);
+  xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xmlhttp.send("notes="+alpha);
+
+}
+
+</script>
+
+<!-- <button onclick="getCheckedRadio()">Submit</button> -->
+
+
+
+<footer class="container-fluid text-center">
+  <p>By Matthew Gilot</p>
+</footer>
+
+</body>
+</html>

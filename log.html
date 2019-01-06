@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Chord Identifier - Log</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+
+    body {background-color: lightsalmon;}
+     h1   {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     h2   {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     p    {color: black;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     .navbar-brand {color: white;    font-family: "Arial", Arial, sans-serif; font-weight: bold}
+     .active {color: white;	font-family: "Arial", Arial, sans-serif; font-weight:bold}
+     p.oblique {color:black; font-style: oblique; font-family: "Arial", Arial, sans-serif; font-weight:bold}
+     .panel-group {color:black; font-style: oblique; font-family: "Arial", Arial, sans-serif; font-weight:bolder}
+     /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >Chord Identifier</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="cs498.html">Home</a></li>
+	        <li><a href="ChordIdentifier.html">Tool</a></li>
+            <li class=active><a href="log.html">Build Log</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="tutorial.html">Tutorial</a></li>
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="PANELGROUP">
+  <h2 align=center>Build Log</h2>
+  <div class="panel-group">
+    <div class="panel panel-default">
+      <div class="panel-heading">2-18-18</div>
+      <div class="panel-body">Added log and research portion. Created last week was
+    was the first mysql database necessary for driving the chord selection.
+    A join and PHP integration is to come, and I need to figure out a way to "wire" the radio button
+    selection to the database (in PHP).  </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">3-06-18</div>
+      <div class="panel-body">Installed and configured Apache Server and PHPmyAdmin for later use</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">3-15-18 (Major Progress)</div>
+      <div class="panel-body">Developed most of javascript function to loop through table and get values of
+      buttons.
+     </div>
+     <div class="panel panel-default">
+       <div class="panel-heading">4-13-18</div>
+       <div class="panel-body">Developed array to collect and pass values of notes.  </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading">4-14-18</div>
+      <div class="panel-body">Made first SQL query. Returns root 1 triad chord (starting on thinnest strings)  </div>
+  </div>
+  <div class="panel panel-default"></div>
+  <div class="panel-heading">4-19-18</div>
+  <div class="panel-body">Splitting array now allows for e shaped barre chords and triads. </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>By Matthew Gilot</p>
+  <p>Under active development as of January 2018</p>
+</footer>
+
+</body>
+</html>
